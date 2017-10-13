@@ -1,18 +1,18 @@
 class Bowling
+
     def initialize
         @score = 0
         @all_score = 0
         
-        @speaFlg = false
+        @is_spea = false
         @count = 0
     end
     
     def add_score(obj)
-        
         @count += 1
         @score += obj
         
-        if @speaFlg
+        if @is_spea
             @all_score += obj
         end
         
@@ -20,15 +20,14 @@ class Bowling
             @all_score += @score
             
             if @score == 10
-                @speaFlg = true
+                @is_spea = true
             else
-                @speaFlg = false
+                @is_spea = false
             end
             
             @count = 0
             @score = 0
         end
-        
     end
     
     def total_score
